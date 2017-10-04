@@ -1,4 +1,5 @@
-all: work-obj93.cf
+TARGET=cpu86.vcd
+all: $(TARGET)
 
 CPU86=..
 TOP=..
@@ -33,11 +34,18 @@ work-obj93.cf:
 
 	ghdl -e --ieee=synopsys -fexplicit aaatop_tb
 
+cpu86.vcd: work-obj93.cf
 	\time ghdl -r --ieee=synopsys -fexplicit aaatop_tb --stop-time=$(TIME) --ieee-asserts=disable --vcd=cpu86.vcd
+
+cpu86.fst: work-obj93.cf
 	\time ghdl -r --ieee=synopsys -fexplicit aaatop_tb --stop-time=$(TIME) --ieee-asserts=disable --fst=cpu86.fst
 
+CATVCD2=../../catvcd/catvcd2
+check: cpu86.vcd
+	$(CATVCD2) $<
 
 clean:
+	$(RM) $(TARGET)
 	$(RM) work-obj93.cf
 
 clobber: clean
