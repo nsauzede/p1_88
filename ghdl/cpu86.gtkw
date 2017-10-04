@@ -1,0 +1,57 @@
+[*]
+[*] GTKWave Analyzer v3.3.79 (w)1999-2017 BSI
+[*] Wed Sep 13 22:53:44 2017
+[*]
+[dumpfile] "/home/dummy/nico/p1_88/ghdl/cpu86.fst"
+[dumpfile_mtime] "Wed Sep 13 21:52:14 2017"
+[dumpfile_size] 7377
+[savefile] "/home/dummy/nico/p1_88/ghdl/cpu86.gtkw"
+[timestart] 0
+[size] 1473 933
+[pos] 381 -1
+*-26.518301 415000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] uut.
+[treeopen] uut.cpu0.
+[treeopen] uut.cpu0.cpubiu.
+[treeopen] uut.cpu0.cpubiu.i4.
+[treeopen] uut.cpu0.cpudpath.
+[sst_width] 225
+[signals_width] 202
+[sst_expanded] 1
+[sst_vpaned_height] 280
+@28
+uut.cpu0.clk
+@22
+uut.cpu0.cpudpath.ccbus[15:0]
+uut.cpu0.cpudpath.cs_s[15:0]
+uut.cpu0.cpudpath.ds_s[15:0]
+uut.cpu0.cpudpath.ax_s[15:0]
+uut.cpu0.cpudpath.cx_s[15:0]
+uut.cpu0.cpudpath.si_s[15:0]
+uut.cpu0.cpudpath.di_s[15:0]
+uut.cpu0.cpubiu.dbus_in[7:0]
+@28
+uut.cpu0.por
+@22
+uut.cpu0.abus[19:0]
+uut.cpu0.dbus_out[7:0]
+@28
+uut.cpu0.iom
+uut.cpu0.rdn
+uut.cpu0.clrop
+uut.cpu0.cpuproc.current_state
+uut.cpu0.cpuproc.next_state
+@22
+uut.cpu0.cpudpath.i9.ipbus[15:0]
+@23
+uut.cpu0.cpudpath.i9.ipreg[15:0]
+@22
+uut.cpu0.cpudpath.i9.ipreg_s[15:0]
+uut.cpu0.cpudpath.i15.csreg_s[15:0]
+uut.cpu0.cpudpath.i15.cs_s[15:0]
+@28
+uut.cpu0.cpudpath.i6.zeroflag_s
+uut.cpu0.cpudpath.i6.signflag_s
+uut.cpu0.cpudpath.i6.parityflag_s
+[pattern_trace] 1
+[pattern_trace] 0

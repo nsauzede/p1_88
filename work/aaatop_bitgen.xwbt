@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/nico/nico/hack/fpga/p1_88/work/aaatop.ncd
+OUTFILE=/home/nico/nico/hack/fpga/p1_88/work/aaatop.bit
+FAMILY=Spartan3E
+PART=xc3s500e-4vq100
+WORKINGDIR=/home/nico/nico/hack/fpga/p1_88/work
+LICENSE=WebPack
+USER_INFO=202522545_0_0_937

@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "/home/dummy/nico/p1_88/work/aaatop_tb_isim_beh.exe" -prj "/home/dummy/nico/p1_88/work/aaatop_tb_beh.prj" "work.aaatop_tb" 
