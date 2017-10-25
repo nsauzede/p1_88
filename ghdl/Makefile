@@ -34,8 +34,11 @@ work-obj93.cf:
 
 	ghdl -e --ieee=synopsys -fexplicit aaatop_tb
 
-cpu86.vcd: work-obj93.cf
-	\time ghdl -r --ieee=synopsys -fexplicit aaatop_tb --stop-time=$(TIME) --ieee-asserts=disable --vcd=cpu86.vcd
+#cpu86.vcd: work-obj93.cf
+#	\time ghdl -r --ieee=synopsys -fexplicit aaatop_tb --stop-time=$(TIME) --ieee-asserts=disable --vcd=cpu86.vcd
+
+cpu86.vcd: cpu86.fst
+	fst2vcd -f $< -o $@
 
 cpu86.fst: work-obj93.cf
 	\time ghdl -r --ieee=synopsys -fexplicit aaatop_tb --stop-time=$(TIME) --ieee-asserts=disable --fst=cpu86.fst
