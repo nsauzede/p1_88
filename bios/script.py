@@ -50,8 +50,7 @@ def stepi(f):
 f=open("out.txt","wt")
 pc = 0
 #gdb.execute("disp")
-#while pc < 0xffffb:
-while pc < 0xffffa:
+while pc < 0xffffc:
 	pc = stepi(f)
 
 gdb.execute("kill")

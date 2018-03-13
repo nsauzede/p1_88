@@ -43,8 +43,10 @@ cpu86.vcd: cpu86.fst
 cpu86.fst: work-obj93.cf
 	\time ghdl -r --ieee=synopsys -fexplicit aaatop_tb --stop-time=$(TIME) --ieee-asserts=disable --fst=cpu86.fst
 
-CATVCD2=../../catvcd/catvcd2
-check: cpu86.vcd
+CATVCD2:=../../catvcd/catvcd2
+$(CATVCD2):
+	@echo "*** Please install catvcd2 in $@, or define CATVCD2 to point to it !!" && false
+check: cpu86.vcd | $(CATVCD2)
 	$(CATVCD2) $<
 
 clean:

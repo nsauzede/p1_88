@@ -68,6 +68,8 @@ inc si
 inc cx
 inc di		; => f002 ()
 repz cmpsb	; => 
+inc ax		; used as placeholder nop with side effect
+inc ax		; used as placeholder nop with side effect
 jmp $
 
 boot_end:
