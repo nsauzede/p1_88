@@ -69,8 +69,8 @@ nop		;9 90
 ;inc di		; 47
 ;inc di
 ;cmpsb		; A6	=> 0887 (CF PF SF OF)
-;cmp al,cl	;A 38 C8	=> 0097 (CF PF AF SF)
-cmp al,ch	;A 38 E8	=> 0046 (PF ZF)
+cmp al,cl	;A 38 C8	=> 0097 (CF PF AF SF)
+;cmp al,ch	;A 38 E8	=> 0046 (PF ZF)
 inc ax		;C 40	used as placeholder nop with side effect
 inc ax		;D 40	used as placeholder nop with side effect
 jmp $		; EB FE

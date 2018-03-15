@@ -95,8 +95,8 @@ begin
 --		x"40" when abus=x"ffffa" else
 		x"38" when abus=x"ffffa" else
 --		x"40" when abus=x"ffffb" else
---		x"c8" when abus=x"ffffb" else
-		x"e8" when abus=x"ffffb" else
+		x"c8" when abus=x"ffffb" else
+--		x"e8" when abus=x"ffffb" else
 		x"eb" when abus=x"ffffc" else
 		x"fe" when abus=x"ffffd" else
 		x"ff" when abus=x"ffffe" else
