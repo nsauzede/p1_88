@@ -2453,7 +2453,7 @@ begin
  
                              next_state      <= Sreadmem;               -- start read cycle 
  
-                         elsif (passcnt="0011") then                    -- second pass read SEG:[SI], ALUREG-SEG:[SI]
+                         elsif (passcnt=X"03") then                    -- second pass read SEG:[SI], ALUREG-SEG:[SI]
                              second_pass_s   <= '1';     
                              passcnt_s       <= passcnt - '1';   
                              

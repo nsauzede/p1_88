@@ -5,11 +5,11 @@ Q=qemu-system-i386
 all:$(TARGET)
 
 check: out.txt
-	cat out.txt
+	@cat out.txt
 
 out.txt: bios
 	$(Q) -display none -bios bios -S -s &
-	gdb -nx -q --command script.py
+	-gdb -nx -q --command script.py > /dev/null 2>&1
 
 %: %.asm
 	nasm $^ -o $@

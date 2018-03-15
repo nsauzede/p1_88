@@ -82,11 +82,21 @@ begin
 		x"c6" when abus=x"ffff4" else
 		x"46" when abus=x"ffff5" else
 		x"41" when abus=x"ffff6" else
-		x"47" when abus=x"ffff7" else
-		x"f3" when abus=x"ffff8" else
-		x"a6" when abus=x"ffff9" else
-		x"40" when abus=x"ffffa" else
-		x"40" when abus=x"ffffb" else
+--		x"bf" when abus=x"ffff6" else
+--		x"47" when abus=x"ffff7" else
+--		x"04" when abus=x"ffff7" else
+		x"90" when abus=x"ffff7" else
+--		x"f3" when abus=x"ffff8" else	-- => f046
+		x"90" when abus=x"ffff8" else
+--		x"47" when abus=x"ffff8" else
+--		x"00" when abus=x"ffff8" else
+--		x"a6" when abus=x"ffff9" else	-- => f046 (PF ZF)
+		x"90" when abus=x"ffff9" else
+--		x"40" when abus=x"ffffa" else
+		x"38" when abus=x"ffffa" else
+--		x"40" when abus=x"ffffb" else
+--		x"c8" when abus=x"ffffb" else
+		x"e8" when abus=x"ffffb" else
 		x"eb" when abus=x"ffffc" else
 		x"fe" when abus=x"ffffd" else
 		x"ff" when abus=x"ffffe" else

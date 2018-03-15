@@ -55,22 +55,25 @@ boot:
 
 ;from QEMU :
 ;at boot, DS=SI=DI=CX=0, CS=F000, IP=FFF0
-;call here1
-;here1:
-;pop si
-;call here2
-;here2:
-;pop di
-dec si		; => f096 (PF AF SF)
-mov ds,si
-mov es,si
-inc si
-inc cx
-inc di		; => f002 ()
-repz cmpsb	; => 
-inc ax		; used as placeholder nop with side effect
-inc ax		; used as placeholder nop with side effect
-jmp $
+dec si		;0 4E	=> f096 (PF AF SF)
+mov ds,si	;1 8E DE
+mov es,si	;3 8E C6
+inc si		;5 46
+inc cx		;6 41
+;inc di		; 47	=> f002 ()
+;mov di,0x4	;7 BF 04 00
+;repz		; F3
+nop		;7 90
+nop		;8 90
+nop		;9 90
+;inc di		; 47
+;inc di
+;cmpsb		; A6	=> 0887 (CF PF SF OF)
+;cmp al,cl	;A 38 C8	=> 0097 (CF PF AF SF)
+cmp al,ch	;A 38 E8	=> 0046 (PF ZF)
+inc ax		;C 40	used as placeholder nop with side effect
+inc ax		;D 40	used as placeholder nop with side effect
+jmp $		; EB FE
 
 boot_end:
 

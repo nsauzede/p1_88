@@ -42,7 +42,18 @@ def stepi(f):
 	f.write("di=%04x " % gdb.parse_and_eval("$edi").cast(int_t))
 	f.write("fl=%04x " % gdb.parse_and_eval("$eflags").cast(int_t))
 	f.write("%-15s " % gdb.parse_and_eval("$eflags"))
-	f.write("%02x" % gdb.parse_and_eval("*(unsigned char *)($eip+$cs*16)").cast(int_t))
+#	f.write("%02x" % gdb.parse_and_eval("*(unsigned char *)($eip+$cs*16)").cast(int_t))
+#	s=""
+#	gdb.execute("x/i $eip+$cs*16", False, s)
+#	f.write("dis=%s" % s)
+	insn0=gdb.execute("x/i $eip+$cs*16", True, True)
+	insn1=gdb.execute("x", True, True)
+	start=int(insn0.split(':')[0],16)
+	end=int(insn1.split(':')[0],16)
+#	f.write("start=%x end=%x\n" % (start, end))
+	for a in range(start, end):
+		f.write(" %02x" % gdb.parse_and_eval("*(unsigned char *)(%#x)" % a).cast(int_t))
+#		f.write(" *(unsigned char *)(%#x)" % a)
 	f.write("\n")
 	gdb.execute("stepi")
 	return pc
